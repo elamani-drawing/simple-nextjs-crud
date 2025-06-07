@@ -1,6 +1,6 @@
-# Simple CRUD Project with Next.js, React, and Backend API
+# Simple CRUD Project with Next.js, React.
 
-This project is a **basic implementation of a CRUD (Create, Read, Update, Delete)** application using **Next.js** and **React** on the frontend, with a simple backend API that receives and stores data.
+This project is a **basic implementation of a CRUD (Create, Read, Update, Delete)** application using **Next.js** and **React** on the frontend, , with a simple backend API with Nextjs receiving and storing the data.
 
 ## Main Features
 
