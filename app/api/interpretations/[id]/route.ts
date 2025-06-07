@@ -31,7 +31,7 @@ async function fetchInterpretation(id: string) {
 
 export async function GET(req: Request, { params }: { params: { id: string } }) { 
     try { 
-        const { id } = await params;
+        const id = (await params).id;
         const interpretation = await fetchInterpretation(id);
         return NextResponse.json( {interpretation });
     } catch (error) {
