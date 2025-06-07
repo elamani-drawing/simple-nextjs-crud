@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { BookOpen, Plus } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,13 +29,26 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="max-w-3xl mx-auto text-slate-800">
-          <header className="p-6 border-b flex justify-between flex items-center bg-blue-500 rounded-bl-lg rounded-br-lg">
-            <Link href={'/'} className="text-2xl font-bold text-white"> Tech Interpretations</Link>
-            <Link href={'/create'} className="bg-slate-100 grid place-items-center py-2 px-4 rounded-full font-bold shadow"> Add New</Link>
-          </header>
-          <main className="p-4 text-lg"> {children}</main>
+        <div className="bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg">
+          <div className="max-w-6xl mx-auto px-6 py-8">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <Link href={'/'} className="p-2 bg-white/20 rounded-lg">
+                  <BookOpen className="h-8 w-8 text-white" />
+                </Link>
+                <div>
+                  <h1 className="text-3xl font-bold text-white">Tech Interpretations</h1>
+                  <p className="text-blue-100 mt-1">Manage your technical definitions and explanations</p>
+                </div>
+              </div>
+              <Link href={'/create'} className="flex rounded-sm bg-white text-blue-600 hover:bg-blue-50 font-semibold px-6 py-3 h-auto"><Plus className="h-5 w-5 mr-2" /> Add New</Link>
+            </div>
+          </div>
         </div>
+        
+      <div className="max-w-6xl mx-auto px-6 py-8">
+        <main className="p-4 text-lg"> {children}</main>
+      </div>
       </body>
     </html>
   );

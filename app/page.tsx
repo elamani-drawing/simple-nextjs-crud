@@ -54,7 +54,7 @@ export default function Home() {
       {error && <p className="py-4 text-red-500 ">{error}</p>}
       {isLoading ? (<p className="py-4">Loading interpretations...</p>
       ) : interpretations?.length > 0 ? (
-        <div className="p-4 my-2 rounded-md border-b leading-8">
+       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
           {
             interpretations?.map(interpretation => (
               <div key={interpretation.term} className="p-4 my-2 rounded-md border-b leading-8">
@@ -69,6 +69,7 @@ export default function Home() {
                   </button>
                 </div>
               </div>
+              
             ))
           }
         </div>
