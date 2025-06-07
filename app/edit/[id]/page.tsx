@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, useEffect, useState } from "react";
-export default function EditPage({params}: {params: {id: string}}) { 
+export default function EditPage({ params }: { params: Promise<{ id: string }> }) { 
     const [formData, setFormData] = useState({ term: "", interpretation: "" });
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -10,13 +10,13 @@ export default function EditPage({params}: {params: {id: string}}) {
 
     useEffect(() => {
         const fetchData = async() => {
-            params = await params;
+            const { id } = await params; 
             try {
-                const response = await fetch(`/api/interpretations/${params.id}`);
+                const response = await fetch(`/api/interpretations/${id}`);
                 if (!response.ok) {
                     throw new Error("Failed to fetch interpretation");
                 }
-                const data = await response.json(); 
+                const data = await response.json();
                 setFormData({term : data.interpretation.term, interpretation: data.interpretation.interpretation});
             } catch (error) {
                 console.error("Failed to fetch interpretation:", error);

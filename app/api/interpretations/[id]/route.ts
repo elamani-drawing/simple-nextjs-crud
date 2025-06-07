@@ -31,8 +31,8 @@ async function fetchInterpretation(id: string) {
 
 export async function GET(req: Request, { params }: { params: Promise<{ id: string }>  }) { 
     try { 
-        const { id } = await params;
-        const interpretation = await fetchInterpretation(id);
+        const { id } = await params; 
+        const interpretation = await fetchInterpretation(id); 
         return NextResponse.json( {interpretation });
     } catch (error) {
         return NextResponse.json({ message: "Failed to get interpretation by id", status: 500 });
