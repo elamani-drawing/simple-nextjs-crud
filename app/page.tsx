@@ -63,8 +63,8 @@ export default function Home() {
                   {interpretation.interpretation}
                 </div>
                 <div className="flex gap-4 mt-4 justify-end">
-                  <Link className="bg-slate-200 px-4 py-2 rounded-md uppercase text-sm font-bold tracking-widest" href={"/edit/2"}>Edit</Link>
-                  <button className="bg-red-500 text-white px-4 py-2 rounded-md uppercase text-sm font-bold tracking-widest" onClick={() => handleDeleteInterpretation(interpretation.term)}>
+                  <Link className="bg-slate-200 px-4 py-2 rounded-md uppercase text-sm font-bold tracking-widest" href={`/edit/${interpretation.term}`}>Edit</Link>
+                  <button className="bg-red-500 text-white px-4 py-2 rounded-md uppercase text-sm font-bold tracking-widest cursor-pointer" onClick={() => handleDeleteInterpretation(interpretation.term)}>
                     Delete
                   </button>
                 </div>

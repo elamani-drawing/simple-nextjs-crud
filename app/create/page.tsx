@@ -49,14 +49,14 @@ export default function CreatePage() {
         <h2 className="text-2xl font-bold my-8">
             Add New Interpretation
         </h2>
-        <form className="flex gap-3 flex-col">
+        <form className="flex gap-3 flex-col" onSubmit={handleSubmit}>
             <input className="py-1 px-4 border rounded-md" type="text" name="term" placeholder="Term" value={formData.term}
                 onChange={handleInputChange} />
             <textarea name="interpretation" rows={4} placeholder="Interpretation" className="py-1 px-4 border rounded-md resize-none"
                 value={formData.interpretation}
                 onChange={handleInputChange}
             ></textarea>
-            <button className="bg-black text-white" onClick={handleSubmit} disabled={isLoading}> {isLoading ? "Adding..." : "Add Interpretation"}</button>
+            <button className="bg-black text-white"  disabled={isLoading}> {isLoading ? "Adding..." : "Add Interpretation"}</button>
         </form>
         {error && <p className="mt-4 text-red-500">{error}</p>}
     </div>
