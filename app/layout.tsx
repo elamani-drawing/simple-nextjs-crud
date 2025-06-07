@@ -46,7 +46,7 @@ export default function RootLayout({
           </div>
         </div>
         
-      <div className="max-w-6xl mx-auto px-6 py-8">
+      <div className="max-w-6xl mx-auto px-6 py-8 bg-gradient-to-br from-slate-50 to-slate-100">
         <main className="p-4 text-lg"> {children}</main>
       </div>
       </body>
