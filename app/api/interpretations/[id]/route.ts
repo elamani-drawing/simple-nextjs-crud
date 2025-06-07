@@ -29,9 +29,9 @@ async function fetchInterpretation(id: string) {
 }
 
 
-export async function GET(req: Request, { params }: { params: { id: string } }) { 
+export async function GET(req: Request, { params }: { params: Promise<{ id: string }>  }) { 
     try { 
-        const id = (await params).id;
+        const { id } = await params;
         const interpretation = await fetchInterpretation(id);
         return NextResponse.json( {interpretation });
     } catch (error) {
@@ -39,9 +39,9 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
     }
 }
 
-export async function DELETE(req: Request, { params }: { params: { id: string } }) { 
+export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }>  }) { 
     try {
-        const id = params.id;
+        const { id } = await params;
         await deleteInterpretation(id);
         return NextResponse.json( {message : "Interpretation deleted" });
     } catch (error) {
@@ -49,9 +49,9 @@ export async function DELETE(req: Request, { params }: { params: { id: string } 
     }
 }
 
-export async function PUT(req: Request, { params }: { params: { id: string } }) { 
+export async function PUT(req: Request, { params }: { params: Promise<{ id: string }>  }) { 
     try {
-        const id = params.id;
+        const { id } = await params;
         const interpretation: Interpretation = await req.json();
         await updateInterpretation(id, interpretation);
         return NextResponse.json( {message : "Interpretation updated" });
