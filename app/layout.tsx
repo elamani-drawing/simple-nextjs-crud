@@ -36,12 +36,12 @@ export default function RootLayout({
                 <Link href={'/'} className="p-2 bg-white/20 rounded-lg">
                   <BookOpen className="h-8 w-8 text-white" />
                 </Link>
-                <div>
+                <Link href={'/'} >
                   <h1 className="text-3xl font-bold text-white">Tech Interpretations</h1>
                   <p className="text-blue-100 mt-1">Manage your technical definitions and explanations</p>
-                </div>
+                </Link>
               </div>
-              <Link href={'/create'} className="flex rounded-sm bg-white text-blue-600 hover:bg-blue-50 font-semibold px-6 py-3 h-auto"><Plus className="h-5 w-5 mr-2" /> Add New</Link>
+              <Link href={'/create'} className=" flex rounded-sm bg-white text-blue-600 hover:bg-blue-50 font-semibold px-6 py-3 h-auto"><Plus className="h-5 w-5 mr-2" /> Add New</Link>
             </div>
           </div>
         </div>
